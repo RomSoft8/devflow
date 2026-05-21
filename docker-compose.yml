@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: devflow-postgres
+    environment:
+      POSTGRES_DB: devflow_db
+      POSTGRES_USER: devflow_user
+      POSTGRES_PASSWORD: devflow_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
